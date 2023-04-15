@@ -11,7 +11,7 @@
       </a>
       <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
         <div class="dropdown-header">Acciones:</div>
-        <a class="dropdown-item" onclick="return abrir_modal" href="#"><i class="far fa-calendar-plus"></i> Nuevo</a>
+        <a class="dropdown-item" onclick="return abrir_modal('{% url 'inv:producto_new' %}')" href="#"><i class="far fa-calendar-plus"></i> Nuevo</a>
       </div>
     </div>
   </div>
@@ -44,7 +44,7 @@
           <td>{{ item.unidad_medida }}</td>
           <td>{{item.estado|yesno:"Activo,Inactivo"}}</td>
           <td>
-            <button class="btn btn-warning btn-circle" onclick="return abrir_modal">
+            <button class="btn btn-warning btn-circle" onclick="return abrir_modal('{% url 'inv:producto_edit' item.id %}')">
                 <i class="far fa-edit"></i></button>
                 <a href="{% url 'inv:producto_inactivar' item.id %}" class="btn btn-danger btn-circle" role="button"><i class="far fa-thumbs-down"></i></a>
           </td>
