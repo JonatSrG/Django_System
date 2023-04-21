@@ -20,6 +20,6 @@ urlpatterns = [
 
     path('',include(('bases.urls','bases'), namespace='bases')),
     path('inv/',include(('inv.urls','inv'), namespace='inv')),
-    
+    path('cmp/', include(('inv.urls', 'cmp'), namespace='cmp')),
     path('admin/', admin.site.urls),
 ]
