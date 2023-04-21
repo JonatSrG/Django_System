@@ -3,9 +3,11 @@ from django.views import generic
 from django.urls import reverse_lazy
 
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponse
+import json
 
 from .models import Proveedor
-from cmp.forms import ProveedorForms
+from .forms import ProveedorForm
 
 class ProveedorView(LoginRequiredMixin, generic.ListView):
     model = Proveedor
